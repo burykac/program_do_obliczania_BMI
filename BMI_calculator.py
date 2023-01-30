@@ -6,8 +6,18 @@ class Zawodnik():
         self.waga = waga
 
     def __str__(self):
-        return f"{imie} {nazwisko} Twoje BMI wynosi: {(waga)/(wzrost**2)}."
+        return f"{self.imie} {self.nazwisko} Twoje BMI wynosi: {(self.waga)/(self.wzrost**2)}."
 
-w = Zawodnik()
+def obliczanie_BMI():
+    decyzja = input("A - oblicz BMI zawodnika/zawodniczki, B - wyjdź: ")
+    while(True):
+        if(decyzja == "A" or decyzja == "a"):
+            imie = str(input("Podaj imię: "))
+            nazwisko = str(input("Podaj nazwisko: "))
+            wzrost = float(input("Podaj wzrost w metrach: "))
+            waga = float(input("Podaj wagę w kilogramach: "))
+            print(Zawodnik(imie, nazwisko, wzrost, waga))
+        else:
+            break
 
-print(w)
+obliczanie_BMI()
